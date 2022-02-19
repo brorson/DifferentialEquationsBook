@@ -1,0 +1,11 @@
+This demonstrates the use of AB2 to integrate the simple
+linear ODE.  There are two things to run:
+
+1.  test_adams_bashforth2 -- Run adams_bashforth2 for different values
+of alpha and plots the results.  It also plots the analytic result
+for comparison.
+
+2.  test_adams_bashforth2_h -- Runs adams_bashforth2 for constant alpha
+but varying stepsize h.  It plots the result and also plots the RMS
+error vs. stepsize h.
+

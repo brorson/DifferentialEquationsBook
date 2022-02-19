@@ -1,0 +1,5 @@
+This is a poor-man's adaptive ODE solver.  It tries a forward Euler
+step and then a Heun's method step.  It compares the two steps and if
+their difference is too large then it halves the step size and tries
+again.  If the difference is very small, then it doubles the step size
+for the next step.  

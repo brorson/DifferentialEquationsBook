@@ -1,0 +1,11 @@
+This directory holds functions which make phase space plots showing
+the evolution of a small area with increasing time.  Both foward Euler
+and symplectic Euler are demonstrated.  The things to run are:
+
+phase_space_semi_implicit_euler.m -- Symplectic Euler
+phase_space_fwd_euler.m           -- Forward Euler
+
+The thing to note is that the initial square does not change area
+under symplectic Euler, but grows with increasing time under forward
+Euler.
+

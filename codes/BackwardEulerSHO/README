@@ -1,0 +1,4 @@
+This integrates the SHO using backward Euler.  It uses traditional
+backward Euler, not the propagator method.  The function f(t, y) is held
+in the file f.m.
+

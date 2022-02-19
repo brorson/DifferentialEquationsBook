@@ -1,0 +1,8 @@
+This integrates the SHO using backward Euler.  It uses the
+propagator matrix.
+
+The matrix is defined in the file propagator.m.  The iteration occurs
+in the file forward_euler.m.
+
+
+
