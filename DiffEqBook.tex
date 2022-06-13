@@ -43,6 +43,13 @@
 
 \DeclareGraphicsExtensions{.eps,.pdf,.png,.jpg}
 
+% Creative commons license package stuff.
+\usepackage[
+type={CC},
+modifier={by-sa},
+version={3.0},
+]{doclicense}
+\usepackage{ccicons}
 
 % Add a serial/Oxford comma by default.
 \newcommand{\creflastconjunction}{, and~}
@@ -67,8 +74,11 @@
 \begin{document}
 \maketitle
 
+
 These are class notes meant to accompany MATH7205, Numerical Analysis 2 at Northeastern University.   This document introduces techniques useful to solve ODEs numerically.  It also motivates the techniques, explains how they work, and examines some of the pitfalls which accompany the techniques.  The student is expected to have a good grasp of calculus, ODEs, and linear algebra, and also be familiar with numerical methods for solving linear and nonlinear systems of equations.
 
+\vspace*{\fill}
+\doclicenseThis
 
 \newpage
 
@@ -2591,17 +2601,7 @@ $\begin{aligned}
 \appendix
 
 \chapter{Guide to Matlab codes}
-A set of Matlab programs accompanies this booklet.  Each program demonstrates one of the solvers covered in the text.  Plots of solutions shown in the text were generated using these Matlab programs.  The programs are available online for students to study at XXXXX.  Here is a list of the available codes.
-\begin{itemize}
-	\item Forward Euler implementation of simple linear ODE showing exponential growth and decay, \cref{XXX}.
-	\item Forward Euler implementation of a linear ODE driven by sinusoidal oscillation, \cref{XXX}.
-	\item Forward Euler implementation of the logistic equation, \cref{XXX}.
-	\item Forward Euler implementation of the simple harmonic oscillator, \cref{XXX}.
-	\item Backward Euler implementation of the logistic equation, \cref{XXX}.
-	\item Backward Euler implementation of the simple harmonic oscillator, \cref{XXX}.
-	\item Heun's method implementation of a linear ODE driven by sinusoidal oscillation, \cref{XXX}.
-	
-\end{itemize}
+A set of Matlab programs accompanies this booklet.  Each program demonstrates one of the solvers covered in the text.  Plots of solutions shown in the text were generated using these Matlab programs.  The programs are available online for students to study at https://github.com/brorson/DifferentialEquationsBook.  
 
 
 \end{document}
