@@ -1,6 +1,6 @@
 function y = adams_bashforth3(y0, N, h)
   % This function solves the system
-  % y' = f(y,t) using 2nd order Adams Bashforth
+  % y' = f(y,t) using 3nd order Adams Bashforth
   %
   % It takes as inputs:
   % y0 = initial value of y.  y0 is a col vector.
@@ -32,6 +32,7 @@ function y = adams_bashforth3(y0, N, h)
 %  y(:,3) = y(:,2) + h*s2;  % Take full step
 %  t = t+h;
 
+  % Get starting points using RK4.
   y = RK4(y0, 3, h);
 
   
