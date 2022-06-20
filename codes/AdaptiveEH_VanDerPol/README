@@ -1,0 +1,14 @@
+This integrates the Van Der Pol oscillator equations using my
+poor-man's adaptive solver.  It compares the results from a forward
+Euler step to the results from a Heun's method step, and then adjusts
+the step size based on how much the two results differ.
+
+There are two things to run:
+
+test_adaptive_eh:  This computes the solution for one value of
+epsilon.
+
+make_phase_plots:  This computes the family of solutions obtained when
+epsilon is varied.  This is used to illustrate stiffness of the ODE --
+where many different trajectories closely approach each other in phase
+space.  

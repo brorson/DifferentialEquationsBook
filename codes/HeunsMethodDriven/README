@@ -1,0 +1,6 @@
+This integrates the driven system
+
+y' = A*sin(omega*t) - alpha*y
+
+using Heun's method.
+

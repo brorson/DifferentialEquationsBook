@@ -1,0 +1,8 @@
+This code computes the solution to the Van Der Pol equation using
+third-order Adams-Bashforth.  The thing to run is
+test_adams_bashforth3.
+
+Note that Adams-Bashforth needs a simpler method to start up.
+Therefore, I used RK4 to compute the first three points, then all
+subsequent steps are taken by 3rd order Adams-Bashforth.
+

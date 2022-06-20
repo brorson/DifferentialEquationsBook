@@ -1,0 +1,2 @@
+This uses backward Euler to solve the exponential growth ODE,
+y' = alpha*y.  Backward Euler is unstable for this system.

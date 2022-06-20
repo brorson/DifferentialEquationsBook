@@ -1,0 +1,3 @@
+This is an implementation of the backward Euler method to integrate
+the logistic ODE.
+
