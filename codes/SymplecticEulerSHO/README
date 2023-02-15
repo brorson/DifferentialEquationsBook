@@ -1,0 +1,4 @@
+This integrates the SHO using symplectic forward Euler.  The goal is
+to show that symplectic forward Euler conserves energy and also
+conserves phase space volumes.
+

@@ -1,5 +1,5 @@
 function test_symplectic_euler()
-  % This function calls ForwardEuler with the
+  % This function calls symplectic_euler with the
   % variables needed to run it.
 
   global w;

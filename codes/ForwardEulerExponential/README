@@ -1,5 +1,7 @@
 This demonstrates the use of forward Euler to integrate the simple
-linear ODE.  There are two things to run:
+linear ODE y' = alpha*y.
+
+There are two things to run:
 
 1.  test_forward_euler -- Run forward_euler for different values
 of alpha and plots the results.  It also plots the analytic result

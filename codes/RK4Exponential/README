@@ -1,0 +1,12 @@
+This integrates the simple linear ODE y' = alpha*y using 4th order
+Runge Kutta.
+
+There are two things to run:
+
+1.  test_RK4 -- Run RK4 for different values
+of alpha and plots the results.  It also plots the analytic result
+for comparison.
+
+2.  test_RK4_h -- Runs RK4 for constant alpha
+but varying stepsize h.  It plots the result and also plots the RMS
+error vs. stepsize h.

@@ -1,0 +1,5 @@
+This integrates the driven system
+
+y' = A sin(omega*t) - alpha*y
+
+The computed solution is then compared to the analytic solution. 

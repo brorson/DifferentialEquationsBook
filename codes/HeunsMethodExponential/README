@@ -1,0 +1,12 @@
+This demonstrates the use of Heun's method to integrate the simple
+linear ODE y' = alpha*y.  There are two things to run:
+
+1.  test_heun -- Run heun for different values
+of alpha and plot the results.  It also plots the analytic result
+for comparison.
+
+2.  test_heun_h -- Runs heun for constant alpha
+but varying stepsize h.  It plots the result and also plots the RMS
+error vs. stepsize h.  The goal of this program is to show the scaling
+of error with stepsize.
+
