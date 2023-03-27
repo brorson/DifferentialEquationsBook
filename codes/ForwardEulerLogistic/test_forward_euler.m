@@ -42,7 +42,7 @@ function test_forward_euler()
     hold on
     plot(t, ya, 'r')
 
-    str = horzcat(str,{['alpha = ' num2str(Ym)]});
+    str = horzcat(str,{['Ym = ' num2str(Ym)]});
   
   end
   
