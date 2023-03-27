@@ -1,6 +1,8 @@
 function y = midpoint(y0, N, h)
   % This function solves the system
-  % y' = f(y,t) using the midpoint method
+  % y' = f(y,t) using the midpoint method.
+  %
+  % This is the explicit midpoint method.
   %
   % It takes as inputs:
   % y0 = initial value of y.  y0 is a col vector.
