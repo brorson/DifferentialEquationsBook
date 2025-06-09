@@ -5,7 +5,8 @@ function test_backward_euler()
   global alpha;
 
   % Set up parameters in equation
-  alphas = [-0.8, -.1, .1, .3];
+  alphas = [-0.8, -.1, .1, .8];
+  %alphas = [-0.8];  
 
   % Step size to use
   h = .1;

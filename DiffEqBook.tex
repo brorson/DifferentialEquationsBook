@@ -928,51 +928,51 @@ Since this is a linear equation, deriving the time-stepping method is easy -- no
 \label{eq:BackwardEulerIterationLinearEq}
 y_{n+1}= \frac{y_n}{1  - h \alpha }
 \end{equation}
-A plot of the solution found via backward Euler when $h = 0.1$ is shown in \cref{fig:BackwardEulerExponential}.  Something is wrong!  The plots do not look like those shown in \cref{fig:ForwardEulerExponential}, nor do they match the analytic result.  What happened?
+A plot of the solutions found via backward Euler for $\alpha = [-0.8, -0.1, 0.1, 0.8]$ are shown in \cref{fig:BackwardEulerExponential}.  To make the plots we took $h = 0.1$.  Something is wrong!  The $\alpha = 0.8$ plot does not look like that shown in \cref{fig:ForwardEulerExponential}, nor does it match the analytic result.  What happened?
 \begin{figure}[tbh]
 	\centering
 	\includegraphics[width=0.5\columnwidth]{BackwardEulerExponential.png}
-	\caption{Backward Euler solution of the exponential growth ODE for $h = 0.1$.  Something is obviously wrong!}
+	\caption{Backward Euler solution of the exponential growth ODE for  $\alpha = [-0.8, -0.1, 0.1, 0.8]$.  Something is wrong!}
 	\label{fig:BackwardEulerExponential}
 \end{figure}
-The biggest hint is the y-axis scale -- it says one of the curves increases to around 4e7 -- a gigantic number.  This is a clear signal backward Euler is unstable for this system.  Stability is therefore the subject of the next subsection.
+The biggest hint is that the calculated values for $\alpha = 0.8$ outrun the analytic solution by a large margin.  This suggests we have a problem with the stability of backward Euler, at least for this $\alpha$ value.  Stability is therefore the subject of the next subsection.
 
 
 \subsection{Stability of backward Euler for the exponential growth ODE}
 Now we derive the domain of stability for the backward Euler method.  We again consider the exponential growth equation \cref{eq:ExpGrowthODE} first presented in \cref{sect:ForwardEulerExponential}.  Following an argument similar to that presented in \cref{sect:ForwardEulerExponential} we may derive the following expression for the growth of an initial perturbation:
 \begin{equation}
 \nonumber
-e_{n+1} = \frac{e_n}{1 + a h}
+e_{n+1} = \frac{e_n}{1 - a h}
 \end{equation}
 Note the similarity of this expression to \cref{eq:BackwardEulerIterationLinearEq} in the last section.  The similarity holds because of the linearity of \cref{eq:ExpGrowthODE}.  
 Assuming the start perturbation at time $t=0$ is $e_0$, the error grows as
 \begin{equation}
-e_n = \left( \frac{1}{1+a h} \right)^n e_0
+e_n = \left( \frac{1}{1-a h} \right)^n e_0
 \end{equation}
 For the error to remain bounded, we require
 \begin{equation}
 \nonumber
-\left| \frac{1}{1+a h} \right| \le 1
+\left| \frac{1}{1-a h} \right| \le 1
 \end{equation}
 or
 \begin{equation}
-\left| 1+a h \right| \ge 1
+\left| 1-a h \right| \ge 1
 \end{equation}
-A plot of the region in the complex plan where the error is bounded (i.e. where backward Euler is stable for this ODE) is shown in \cref{fig:BackwardEulerStabilityRegion}.  Note that this stability region is the complement of that obtained for forward Euler -- backward Euler is stable for large relative step values (large $a h$) while forward Euler is only stable for small steps.  Compare the stability regions shown here to that shown in \cref{fig:ForwardEulerStabilityRegion}.
+A plot of the region in the complex plan where the error is bounded (i.e. where backward Euler is stable for this ODE) is shown in \cref{fig:BackwardEulerStabilityRegion}.  Note that this stability region is complementary to that obtained for forward Euler -- backward Euler is stable for large relative step values (large $a h$) while forward Euler is only stable for small steps.  Compare the stability regions shown here to that shown in \cref{fig:ForwardEulerStabilityRegion}.
 \begin{figure}[tbh]
 	\centering
 	\includegraphics[width=0.5\columnwidth]{BackwardEulerStabilityRegion.png}
-	\caption{Backward Euler's stability region for the exponential growth ODE \cref{eq:ExpGrowthODE}.  The stability region includes the entire complex plane with the exception of the circle of radius 1 in the complex plane centered at $a h = -1$.}
+	\caption{Backward Euler's stability region for the exponential growth ODE \cref{eq:ExpGrowthODE}.  The stability region includes the entire complex plane with the exception of the circle of radius 1 in the complex plane centered at $a h = +1$.}
 	\label{fig:BackwardEulerStabilityRegion}
 \end{figure}
 Thinking back to the results obtained in \cref{sect:BkwdEulerExponentialGrowthODE} for the exponential growth ODE, recall we set $h = 0.1$ and simulated a number of different $\alpha$ values.  For each $\alpha$ value we have
 \begin{itemize}
-	\item $\alpha = -0.8$, $\alpha h = -0.08$.  This lies inside the unstable circle in \cref{fig:BackwardEulerStabilityRegion}.  Unstable!
-	\item $\alpha = -0.1$, $\alpha h = -0.01$.  This lies inside the unstable circle in \cref{fig:BackwardEulerStabilityRegion}.  Unstable!
-	\item $\alpha = 0.1$, $\alpha h = 0.01$.  This lies outside the unstable circle in \cref{fig:BackwardEulerStabilityRegion}.  Stable.
-	\item $\alpha = 0.3$, $\alpha h = 0.03$.  This lies outside the unstable circle in \cref{fig:BackwardEulerStabilityRegion}.  Stable.
+	\item $\alpha = -0.8$, $\alpha h = -0.08$.  This lies outside the unstable circle in \cref{fig:BackwardEulerStabilityRegion}.  Stable!
+	\item $\alpha = -0.1$, $\alpha h = -0.01$.  This lies outside the unstable circle in \cref{fig:BackwardEulerStabilityRegion}.  Stable!
+	\item $\alpha = 0.1$, $\alpha h = 0.01$.  This lies inside the unstable circle in \cref{fig:BackwardEulerStabilityRegion}.  Unstable.
+	\item $\alpha = 0.8$, $\alpha h = 0.08$.  This lies inside the unstable circle in \cref{fig:BackwardEulerStabilityRegion}.  Unstable.
 \end{itemize}
-Therefore, the bad results shown in \cref{fig:BackwardEulerExponential} are due to the fact that two of the $\alpha h$ values are in the unstable area.
+Therefore, the bad results shown in \cref{fig:BackwardEulerExponential} are due to the fact that two of the $\alpha h$ values are in the unstable area.  We don't see the problem for $\alpha = 0.1$ in Figure \cref{fig:BackwardEulerExponential} simply because the run-away for $\alpha = 0.8$ dominates the entire plot, so we can't see what is happening for smaller values of $\alpha h$.
 
 
 \section{Example: the logistic equation}

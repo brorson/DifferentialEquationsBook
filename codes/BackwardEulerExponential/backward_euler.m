@@ -24,7 +24,7 @@ function y = backward_euler(y0, N, h)
   y(1) = yn;
   for n = 2:N
     % Define the rootfinding problem
-    g = @(ynp1) ynp1 - f(tnp1,ynp1) - yn;
+    g = @(ynp1) ynp1 - h*f(tnp1,ynp1) - yn;
     ynp1 = fsolve(g,yn, opts);
     % Store this solution value.
     y(n) = ynp1;

@@ -36,7 +36,7 @@ function test_backward_euler()
   
     %  Make plots
     figure(1)
-    plot(t, y(1,:))  
+    plot(t, y(1,:),'o')  
     hold on
 
     str = horzcat(str,{['h = ' num2str(h)]})
